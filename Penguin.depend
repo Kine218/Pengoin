@@ -1,0 +1,101 @@
+# depslib dependency file v1.0
+1742122391 source:c:\users\vvrai\desktop\code\please\commonfunc.cpp
+	"CommonFunc.h"
+
+1742196259 c:\users\vvrai\desktop\code\please\commonfunc.h
+	<iostream>
+	<windows.h>
+	<string>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	"BaseObject.h"
+
+1742198418 source:c:\users\vvrai\desktop\code\please\main.cpp
+	<iostream>
+	"CommonFunc.h"
+	"game_map.h"
+	"random_map.h"
+	"MainObject.h"
+
+1742124752 source:c:\users\vvrai\desktop\code\please\baseobject.cpp
+	"BaseObject.h"
+	"CommonFunc.h"
+
+1742196235 c:\users\vvrai\desktop\code\please\baseobject.h
+	"CommonFunc.h"
+
+1742161537 source:c:\users\vvrai\desktop\code\please\game_map.cpp
+	"game_map.h"
+	"CommonFunc.h"
+	<iostream>
+
+1742152792 c:\users\vvrai\desktop\code\please\game_map.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1742189520 source:c:\users\vvrai\desktop\code\please\random_map.cpp
+	"random_map.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1742149332 c:\users\vvrai\desktop\code\please\random_map.h
+
+1742198232 source:c:\users\vvrai\desktop\code\please\mainobject.cpp
+	"MainObject.h"
+
+1742196332 c:\users\vvrai\desktop\code\please\mainobject.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1742124752 source:c:\users\vvrai\desktop\penguin\baseobject.cpp
+	"BaseObject.h"
+	"CommonFunc.h"
+
+1742196235 c:\users\vvrai\desktop\penguin\baseobject.h
+	"CommonFunc.h"
+
+1742196259 c:\users\vvrai\desktop\penguin\commonfunc.h
+	<iostream>
+	<windows.h>
+	<string>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	"BaseObject.h"
+
+1742122391 source:c:\users\vvrai\desktop\penguin\commonfunc.cpp
+	"CommonFunc.h"
+
+1742161537 source:c:\users\vvrai\desktop\penguin\game_map.cpp
+	"game_map.h"
+	"CommonFunc.h"
+	<iostream>
+
+1742152792 c:\users\vvrai\desktop\penguin\game_map.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1742198418 source:c:\users\vvrai\desktop\penguin\main.cpp
+	<iostream>
+	"CommonFunc.h"
+	"game_map.h"
+	"random_map.h"
+	"MainObject.h"
+
+1742149332 c:\users\vvrai\desktop\penguin\random_map.h
+
+1742196332 c:\users\vvrai\desktop\penguin\mainobject.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1742198232 source:c:\users\vvrai\desktop\penguin\mainobject.cpp
+	"MainObject.h"
+
+1742189520 source:c:\users\vvrai\desktop\penguin\random_map.cpp
+	"random_map.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+
