@@ -160,8 +160,13 @@ void Game_Run()
 //checkDead
         if (p_player.CheckDead(map_data)) is_quit=true;
 //enemy
+        if (p_player.CheckJump==true)
+        {g_music.JumpSound();
+         p_player.CheckJump=false;
+        }
         //  Spawning(p_enemy,g_screen);
-
+        if (score.size()<4||(score.size()==4&&score<"150 "))
+        RenderText("Press Space or click Left mouse button to jump",50,570,white);
         SDL_RenderPresent(g_screen);
 
 
@@ -170,7 +175,9 @@ void Game_Run()
        SDL_Delay(1000/FPS-real_imp_timer);
 
     }
+    g_music.GameOver();
     SDL_RenderPresent(g_screen);
+    SDL_Delay(100);
 }
 
 void Setting()
@@ -184,7 +191,7 @@ void Setting()
     bool quit=false;
     bool slider1touch=false;
     bool slider2touch=false;
-
+    bool reset=false;
     while(setting_isrunning)
     {     g_setting.Render(g_screen);
           SDL_GetMouseState(&mouseX,&mouseY);
@@ -206,12 +213,20 @@ void Setting()
 
         if (mouseX>=700&&mouseX<=850&&mouseY>=490&&mouseY<=510)
             {quit=true;
-            RenderText("Quit",745,495,mint);
+            RenderText("Quit",745,492,mint);
             }
         else
-            RenderText("Quit",745,495,white);
-            RenderText("~Background Music :",450,200,mint);
-            RenderText("~Sound Effects :",450,275,mint);
+            RenderText("Quit",745,492,white);
+
+        if (mouseX>=445&&mouseX<=595&&mouseY>=490&&mouseY<=510)
+            {reset=true;
+            RenderText("Default",480,492,mint);
+            }
+        else
+            RenderText("Default",480,492,white);
+
+            RenderText("~Background Music : "+g_music.getBackvolumn(slider1X)+"%",450,200,mint);
+            RenderText("~Sound Effects : "+g_music.getEffectvolumn(slider2X)+"%",450,275,mint);
 
 
     //
@@ -223,6 +238,14 @@ void Setting()
                 if (quit)
                    {
                     setting_isrunning=false;
+                   }
+                if (reset)
+                   {
+                    slider1X=560;
+                    slider2X=560;
+                    g_music.backgroundmusic_change(slider1X);
+                    g_music.soundeffect_change(slider2X);
+                    reset=false;
                    }
 
               }
@@ -244,6 +267,7 @@ void Setting()
                   }
                }
         }
+
         SDL_RenderPresent(g_screen);
         SDL_RenderClear(g_screen);
     }
@@ -333,6 +357,7 @@ void menu()
                    }
               }
         }
+
        SDL_RenderPresent(g_screen);
    }
    Restart=true;

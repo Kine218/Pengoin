@@ -137,7 +137,7 @@ void Main_Object::Doplayer(Map& map_data)
     {   if (on_ground==true)
         {y_val= -PLAYER_JUMP_VAL;
         input_type.jump=0;
-        music.JumpSound();
+        CheckJump=true;
         }
     }
 }

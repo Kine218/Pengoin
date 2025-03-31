@@ -8,10 +8,14 @@ class Music
        void PlayBackgroundMusic ();
        void JumpSound();
        void ClickSound();
+       void GameOver();
        static void FreeMusic();
        static void MusicInit();
-       void backgroundmusic_change(int slider);
-       void soundeffect_change(int slider);
+     void backgroundmusic_change(int slider);
+     void soundeffect_change(int slider);
+
+       std::string getBackvolumn(int slider);
+       std::string getEffectvolumn(int slider);
     private:
      float clicksound_volumn=4;
      float backgroundmusic_volumn=16;
