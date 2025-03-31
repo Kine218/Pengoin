@@ -14,10 +14,10 @@
 #include <ctime>
 #include <string>
 
+#include "Music.h"
 static SDL_Window* g_window =nullptr;
 static SDL_Renderer* g_screen =nullptr;
 static SDL_Event g_event;
-
 // thông số màn hình
 const int SCREEN_WIDTH=1280;
 const int SCREEN_HEIGHT=640;

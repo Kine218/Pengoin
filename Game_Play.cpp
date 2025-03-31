@@ -1,11 +1,26 @@
 #include "Game_Play.h"
 
 Base_Object g_background;
-Game_Map GAME_MAP;
 Base_Object g_menu;
+Base_Object g_setting;
+
+Base_Object g_slider1;
+Base_Object g_slider2;
+
+Game_Map GAME_MAP;
 Music g_music;
 TTF_Font *gFont = nullptr;
 std::string SCORE;
+
+int slider1X=560;
+int slider1Y=225;
+
+int slider2X=560;
+int slider2Y=300;
+
+const int slider_Min=480;
+const int slider_Max=640;
+
 bool Restart=false;
 
 bool InitData()
@@ -45,7 +60,6 @@ bool InitData()
                 success = false;
         }
     }
-
     Music::MusicInit();
 
     return success;
@@ -161,7 +175,78 @@ void Game_Run()
 
 void Setting()
 {
+    g_setting.LoadImg("img/setting.png",g_screen);
+    g_slider1.LoadImg("img/scroll.png",g_screen);
+    bool setting_isrunning=true;
 
+    int mouseX,mouseY;  //lấy tọa độ chuột
+
+    bool quit=false;
+    bool slider1touch=false;
+    bool slider2touch=false;
+
+    while(setting_isrunning)
+    {     g_setting.Render(g_screen);
+          SDL_GetMouseState(&mouseX,&mouseY);
+
+    //thanh âm thanh nền
+            slider1touch=false;
+            slider2touch=false;
+
+        if (mouseX>=slider1X&&mouseX<=slider1X+13&&mouseY>=slider1Y&&mouseY<=slider1Y+40)
+            slider1touch=true;
+        if (mouseX>=slider2X&&mouseX<=slider2X+13&&mouseY>=slider2Y&&mouseY<=slider2Y+40)
+            slider2touch=true;
+    //slider1
+        g_slider1.SetRect(slider1X,slider1Y);
+        g_slider1.Render(g_screen);
+    //slider2
+        g_slider1.SetRect(slider2X,slider2Y);
+        g_slider1.Render(g_screen);
+
+        if (mouseX>=700&&mouseX<=850&&mouseY>=490&&mouseY<=510)
+            {quit=true;
+            RenderText("Quit",745,495,mint);
+            }
+        else
+            RenderText("Quit",745,495,white);
+            RenderText("~Background Music :",450,200,mint);
+            RenderText("~Sound Effects :",450,275,mint);
+
+
+    //
+         while (SDL_PollEvent(&g_event)!=0)
+        {
+                 if (g_event.type == SDL_MOUSEBUTTONDOWN && g_event.button.button == SDL_BUTTON_LEFT)
+              { g_music.ClickSound();
+
+                if (quit)
+                   {
+                    setting_isrunning=false;
+                   }
+
+              }
+               if (g_event.type ==SDL_MOUSEMOTION&&g_event.button.button == SDL_BUTTON_LEFT)
+               {
+                   if (slider1touch)
+                  {
+                    slider1X=mouseX-7;
+                    if (slider1X<=slider_Min) slider1X=slider_Min;
+                    if (slider1X>=slider_Max) slider1X=slider_Max;
+                    g_music.backgroundmusic_change(slider1X);
+                  }
+                    if (slider2touch)
+                  {
+                    slider2X=mouseX-7;
+                    if (slider2X<=slider_Min) slider2X=slider_Min;
+                    if (slider2X>=slider_Max) slider2X=slider_Max;
+                    g_music.soundeffect_change(slider2X);
+                  }
+               }
+        }
+        SDL_RenderPresent(g_screen);
+        SDL_RenderClear(g_screen);
+    }
 
 }
 void menu()

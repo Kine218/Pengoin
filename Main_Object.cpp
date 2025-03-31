@@ -1,5 +1,6 @@
 #include "Main_Object.h"
-
+#include "Game_Play.h"
+Music music;
 Main_Object::Main_Object()
 {
     frame=0;
@@ -122,7 +123,7 @@ void Main_Object::set_clips()
 }
 
 void Main_Object::Doplayer(Map& map_data)
-{   Music music;
+{
     x_val+=PLAYER_SPEED;
     if (x_val>MAX_PLAYER_SPEED) x_val=MAX_PLAYER_SPEED;
 

@@ -10,11 +10,12 @@ class Music
        void ClickSound();
        static void FreeMusic();
        static void MusicInit();
-
+       void backgroundmusic_change(int slider);
+       void soundeffect_change(int slider);
     private:
-     int clicksound_volumn=4;
-     int backgroundmusic_volumn=16;
-     int jumpsound_volumn=8;
+     float clicksound_volumn=4;
+     float backgroundmusic_volumn=16;
+     float jumpsound_volumn=8;
 };
 
 #endif // MUSIC_H

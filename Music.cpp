@@ -43,4 +43,19 @@ void Music::PlayBackgroundMusic()
         Mix_PlayMusic(backgroundMusic, -1); // Lặp vô hạn
     }
 }
+void Music::backgroundmusic_change(int slider)
+{
+    backgroundmusic_volumn=float(slider-480)*0.2;
+    Mix_VolumeMusic(backgroundmusic_volumn);
+}
+void Music::soundeffect_change(int slider)
+{
+    jumpsound_volumn =float(slider-480)*0.1;
+    clicksound_volumn=float(slider-480)*0.05;
+    Mix_VolumeChunk(jumpsound, jumpsound_volumn);
+    Mix_VolumeChunk(clicksound, clicksound_volumn);
+
+}
+
+
 
