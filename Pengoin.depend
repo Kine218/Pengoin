@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1743358931 source:c:\users\vvrai\desktop\pengoin\main.cpp
+	<iostream>
+	"Game_Play.h"
+
+1743390674 source:c:\users\vvrai\desktop\pengoin\game_play.cpp
+	"Game_Play.h"
+
+1743390702 c:\users\vvrai\desktop\pengoin\game_play.h
+	<iostream>
+	"Common_Function.h"
+	"Game_Map.h"
+	"Main_Object.h"
+	"Imp_Timer.h"
+	"Music.h"
+	"Random_Map.h"
+
+1743391969 c:\users\vvrai\desktop\pengoin\common_function.h
+	<iostream>
+	<windows.h>
+	<string>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	<fstream>
+	<cstdlib>
+	<ctime>
+	<string>
+
+1743348757 source:c:\users\vvrai\desktop\pengoin\base_object.cpp
+	"Base_Object.h"
+
+1743348757 c:\users\vvrai\desktop\pengoin\base_object.h
+	"Common_Function.h"
+
+1743354702 source:c:\users\vvrai\desktop\pengoin\main_object.cpp
+	"Main_Object.h"
+
+1743390778 c:\users\vvrai\desktop\pengoin\main_object.h
+	"Common_Function.h"
+	"Base_Object.h"
+	"Music.h"
+
+1743351564 source:c:\users\vvrai\desktop\pengoin\game_map.cpp
+	"Game_Map.h"
+	"Common_Function.h"
+	<iostream>
+
+1743353261 c:\users\vvrai\desktop\pengoin\game_map.h
+	"Common_Function.h"
+	"Base_Object.h"
+
+1743352474 source:c:\users\vvrai\desktop\pengoin\imp_timer.cpp
+	"Imp_Timer.h"
+	"Common_Function.h"
+
+1743352459 c:\users\vvrai\desktop\pengoin\imp_timer.h
+
+1743387333 c:\users\vvrai\desktop\pengoin\music.h
+	"Common_Function.h"
+
+1743387333 source:c:\users\vvrai\desktop\pengoin\music.cpp
+	"Music.h"
+	"Common_Function.h"
+
+1743354941 source:c:\users\vvrai\desktop\pengoin\random_map.cpp
+	"Random_Map.h"
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<ctime>
+	"game_map.h"
+
+1743354916 c:\users\vvrai\desktop\pengoin\random_map.h
+
